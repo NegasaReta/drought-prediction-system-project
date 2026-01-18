@@ -10,6 +10,12 @@ pip install -r requirements.txt
 ```
 Create a .env file and configure the environment variables based on .env.example.
 
+run
+```bash
+python3 -m model.Article
+```
+to create the tables inside the database
+
 Start the FastAPI development server:
 ```bash
 fastapi dev main.py
