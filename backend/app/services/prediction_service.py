@@ -5,7 +5,8 @@ import os
 class PredictionService:
     def __init__(self):
         self.model = None
-        self.model_path = "backend/app/models/drought_prediction_ndvi_spi_lstm.h5"
+        # Path relative to where uvicorn is run (backend/)
+        self.model_path = "app/models/drought_prediction_ndvi_spi_lstm.h5"
         self.load_model()
 
     def load_model(self):
