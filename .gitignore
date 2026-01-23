@@ -30,3 +30,7 @@ dist/
 
 # Brain/Artifacts (if you want to keep them local)
 .gemini/
+.venv/
+.history
+api/.env
+__pycache__/

@@ -1,0 +1,9 @@
+fastapi[standard]
+sqlmodel
+black
+pylint
+asyncpg
+pydantic-settings
+passlib[bcrypt]
+python-jose[cryptography]
+python-multipart
