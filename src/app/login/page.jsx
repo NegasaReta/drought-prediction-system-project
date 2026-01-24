@@ -42,12 +42,12 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-500 to-indigo-600 text-white">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-gray-900 to-gray-800 text-white">
       <form
         onSubmit={handleSubmit}
-        className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-md"
+        className="bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-md"
       >
-        <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-white">
+        <h2 className="text-3xl font-bold mb-6 text-white">
           Login
         </h2>
         {error && <p className="text-red-500 mb-4">{error}</p>}
@@ -56,7 +56,7 @@ export default function Login() {
           placeholder="Email / Username"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full p-3 mb-4 border rounded-lg dark:bg-gray-700 dark:text-white"
+          className="w-full p-3 mb-4 border border-gray-600 rounded-lg bg-gray-700 text-white placeholder-gray-400"
           required
         />
         <input
@@ -64,7 +64,7 @@ export default function Login() {
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="w-full p-3 mb-4 border rounded-lg dark:bg-gray-700 dark:text-white"
+          className="w-full p-3 mb-4 border border-gray-600 rounded-lg bg-gray-700 text-white placeholder-gray-400"
           required
         />
         <button
@@ -73,9 +73,9 @@ export default function Login() {
         >
           Login
         </button>
-        <p className="mt-4 text-center text-gray-900 dark:text-white">
+        <p className="mt-4 text-center text-white">
           No account?{" "}
-          <Link href="/register" className="text-blue-600 hover:underline">
+          <Link href="/register" className="text-blue-400 hover:underline">
             Register
           </Link>
         </p>

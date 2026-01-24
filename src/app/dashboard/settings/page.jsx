@@ -4,7 +4,7 @@ import Sidebar from "../../../components/Sidebar";
 import Navbar from "../../../components/Navbar";
 
 export default function Settings() {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState("dark");
 
   useEffect(() => {
     // Load theme from localStorage on mount

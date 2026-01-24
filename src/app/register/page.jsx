@@ -37,12 +37,12 @@ export default function Register() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-500 to-indigo-600 text-white">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-gray-900 to-gray-800 text-white">
       <form
         onSubmit={handleSubmit}
-        className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-md"
+        className="bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-md"
       >
-        <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-white">
+        <h2 className="text-3xl font-bold mb-6 text-white">
           Register
         </h2>
         {error && <p className="text-red-500 mb-4">{error}</p>}
@@ -51,14 +51,14 @@ export default function Register() {
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full p-3 mb-4 border rounded-lg dark:bg-gray-700 dark:text-white"
+          className="w-full p-3 mb-4 border border-gray-600 rounded-lg bg-gray-700 text-white placeholder-gray-400"
           required
         />
         <input
           placeholder="Username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          className="w-full p-3 mb-4 border rounded-lg dark:bg-gray-700 dark:text-white"
+          className="w-full p-3 mb-4 border border-gray-600 rounded-lg bg-gray-700 text-white placeholder-gray-400"
           required
         />
         <input
@@ -66,7 +66,7 @@ export default function Register() {
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="w-full p-3 mb-4 border rounded-lg dark:bg-gray-700 dark:text-white"
+          className="w-full p-3 mb-4 border border-gray-600 rounded-lg bg-gray-700 text-white placeholder-gray-400"
           required
         />
         <button
@@ -75,9 +75,9 @@ export default function Register() {
         >
           Register
         </button>
-        <p className="mt-4 text-center text-gray-900 dark:text-white">
+        <p className="mt-4 text-center text-white">
           Have an account?{" "}
-          <Link href="/login" className="text-blue-600 hover:underline">
+          <Link href="/login" className="text-blue-400 hover:underline">
             Login
           </Link>
         </p>
