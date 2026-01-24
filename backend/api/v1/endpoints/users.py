@@ -1,9 +1,9 @@
 from typing import Any
 from fastapi import APIRouter, HTTPException
 from sqlmodel import select
-from ....api.deps import SessionDep, CurrentUser
-from ....models.user import User, UserCreate, UserRead
-from ....core.security import get_password_hash
+from backend.api.deps import SessionDep, CurrentUser
+from backend.models.user import User, UserCreate, UserRead
+from backend.core.security import get_password_hash
 
 router = APIRouter()
 

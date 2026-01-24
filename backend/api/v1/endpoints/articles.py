@@ -3,9 +3,9 @@ from typing import Any
 from fastapi import APIRouter, Depends, HTTPException
 from sqlmodel import select
 
-from ....api.deps import CurrentUser, SessionDep
-from ....models.article import Article, ArticleCreate, ArticleRead, ArticleUpdate
-from ....models.user import Role, User
+from backend.api.deps import CurrentUser, SessionDep
+from backend.models.article import Article, ArticleCreate, ArticleRead, ArticleUpdate
+from backend.models.user import Role, User
 
 router = APIRouter()
 

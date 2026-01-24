@@ -1,7 +1,7 @@
 import os
 import tensorflow as tf
 
-model_path = "backend/app/models/drought_prediction_ndvi_spi_lstm.h5"
+model_path = "api/models/drought_prediction_ndvi_spi_lstm.h5"
 
 try:
     if not os.path.exists(model_path):

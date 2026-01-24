@@ -5,10 +5,10 @@ from jose import jwt, JWTError
 from sqlmodel.ext.asyncio.session import AsyncSession
 from sqlmodel import select
 
-from ..core import security
-from ..core.config import settings
-from ..core.db import get_session
-from ..models.user import User, TokenData
+from backend.core import security
+from backend.core.config import settings
+from backend.core.db import get_session
+from backend.models.user import User, TokenData
 
 reusable_oauth2 = OAuth2PasswordBearer(
     tokenUrl=f"{settings.API_V1_STR}/login/access-token"

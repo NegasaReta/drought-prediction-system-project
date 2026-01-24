@@ -5,11 +5,11 @@ import os
 import sys
 
 # Ensure imports work (assuming running from api/ dir)
-sys.path.append(os.getcwd())
+# sys.path.append(os.getcwd())
 
 from httpx import AsyncClient, ASGITransport
 from main import app
-from core.db import init_db
+from backend.core.db import init_db
 
 
 def random_string(length=6):

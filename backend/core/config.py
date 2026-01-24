@@ -18,6 +18,9 @@ class Settings(BaseSettings):
     # DATABASE
     POSTGRES_URL: str = os.getenv("POSTGRES_URL")
 
+    # CLIENT URI
+    CLIENT_URI: str = os.getenv("CLIENT_URI")
+    
     @field_validator("POSTGRES_URL", mode="before")
     @classmethod
     def assemble_db_connection(cls, v: str):

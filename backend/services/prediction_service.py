@@ -2,11 +2,12 @@ import tensorflow as tf
 import numpy as np
 import os
 
+
 class PredictionService:
     def __init__(self):
         self.model = None
         # Path relative to where uvicorn is run (backend/)
-        self.model_path = "app/models/drought_prediction_ndvi_spi_lstm.h5"
+        self.model_path = "backend/models/drought_prediction_ndvi_spi_lstm.h5"
         self.load_model()
 
     def load_model(self):
@@ -24,11 +25,11 @@ class PredictionService:
     def predict(self, input_data: list):
         """
         Makes a prediction based on the input data.
-        
+
         Args:
-            input_data (list): A list representing the input batch. 
+            input_data (list): A list representing the input batch.
                                Expected shape from client: (batch_size, 6, 19) or single instance (6, 19)
-        
+
         Returns:
             list: The prediction results.
         """
@@ -37,23 +38,29 @@ class PredictionService:
 
         # Convert input to numpy array
         input_array = np.array(input_data)
-        
+
         # Ensure it has the batch dimension
         if len(input_array.shape) == 2:
             input_array = np.expand_dims(input_array, axis=0)
-            
+
         # Validate shape
         # Expecting (None, 6, 19)
         expected_timesteps = 6
         expected_features = 19
-        
-        if input_array.shape[1] != expected_timesteps or input_array.shape[2] != expected_features:
-            raise ValueError(f"Input shape mismatch. Expected (batch, {expected_timesteps}, {expected_features}), got {input_array.shape}")
+
+        if (
+            input_array.shape[1] != expected_timesteps
+            or input_array.shape[2] != expected_features
+        ):
+            raise ValueError(
+                f"Input shape mismatch. Expected (batch, {expected_timesteps}, {expected_features}), got {input_array.shape}"
+            )
 
         predictions = self.model.predict(input_array)
-        
+
         # Convert predictions to list for JSON serialization
         return predictions.tolist()
+
 
 # Singleton instance
 prediction_service = PredictionService()
