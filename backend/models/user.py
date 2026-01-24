@@ -48,3 +48,4 @@ class Token(SQLModel):
 
 class TokenData(SQLModel):
     username: Optional[str] = None
+    role: Optional[str] = None

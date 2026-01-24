@@ -28,7 +28,10 @@ export default function Login() {
         },
       );
 
-      if (!res.ok) throw new Error("Invalid credentials");
+      if (!res.ok) {
+        const errorData = await res.json();
+        throw new Error(errorData.detail || "Invalid credentials");
+      }
 
       const data = await res.json();
       localStorage.setItem("access_token", data.access_token);
@@ -49,7 +52,7 @@ export default function Login() {
         </h2>
         {error && <p className="text-red-500 mb-4">{error}</p>}
         <input
-          type="email"
+          type="text"
           placeholder="Email / Username"
           value={email}
           onChange={(e) => setEmail(e.target.value)}

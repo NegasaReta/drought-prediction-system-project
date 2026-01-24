@@ -25,7 +25,10 @@ export default function Register() {
         }),
       });
 
-      if (!res.ok) throw new Error("Registration failed");
+      if (!res.ok) {
+        const errorData = await res.json();
+        throw new Error(errorData.detail || "Registration failed");
+      }
 
       router.push("/login");
     } catch (err) {
